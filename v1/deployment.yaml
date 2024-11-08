@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: random-facts-app
-        image: us-central1-docker.pkg.dev/marson-37767/marson-repo/random-facts-app:1.0
+        image: us-central1-docker.pkg.dev/marson-37767/marson-registry/random-facts-app:1.0
         ports:
         - containerPort: 5000
