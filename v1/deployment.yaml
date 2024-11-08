@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: random-facts-app-canary-v1
+  namespace: random-facts-app-canary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      lab: random-facts-app-canary
+  template:
+    metadata:
+      labels:
+        lab: random-facts-app-canary
+        version: v1
+    spec:
+      containers:
+      - name: random-facts-app
+        image: us-central1-docker.pkg.dev/marson-37767/marson-repo/random-facts-app:1.0
+        ports:
+        - containerPort: 5000

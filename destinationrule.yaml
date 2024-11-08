@@ -1,0 +1,12 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: random-facts-app-dr
+  namespace: random-facts-app-canary
+spec:
+  host: random-facts-app-service
+  subsets:
+  - name: v1
+    labels:
+      version: v1

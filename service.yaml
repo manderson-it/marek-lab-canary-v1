@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: random-facts-app-service
+  namespace: random-facts-app-canary
+  labels:
+    lab: random-facts-app-canary
+spec:
+  selector:
+    lab: random-facts-app-canary
+  ports:
+  - name: http
+    port: 5000
+    protocol: TCP
+    targetPort: 5000
+  type: ClusterIP
